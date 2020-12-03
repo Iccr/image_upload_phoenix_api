@@ -33,4 +33,4 @@ import_config "#{Mix.env()}.exs"
 config :arc,
   # or Arc.Storage.Local
   storage: Arc.Storage.Local,
-  storage_dir: "uploads"
+  storage_dir: "../uploads"
