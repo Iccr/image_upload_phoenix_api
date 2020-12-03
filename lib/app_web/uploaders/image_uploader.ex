@@ -1,4 +1,4 @@
-defmodule App.Image do
+defmodule App.ImageUploader do
   use Arc.Definition
   use Arc.Ecto.Definition
 
@@ -10,15 +10,17 @@ defmodule App.Image do
   # To add a thumbnail version:
   # @versions [:original, :thumb]
 
+  def __storage, do: Arc.Storage.Local
+
   # Override the bucket on a per definition basis:
   # def bucket do
   #   :custom_bucket_name
   # end
 
   # Whitelist file extensions:
-  # def validate({file, _}) do
-  #   ~w(.jpg .jpeg .gif .png) |> Enum.member?(Path.extname(file.file_name))
-  # end
+  def validate({file, _}) do
+    ~w(.jpg .jpeg .gif .png) |> Enum.member?(Path.extname(file.file_name))
+  end
 
   # Define a thumbnail transformation:
   # def transform(:thumb, _) do
