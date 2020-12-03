@@ -3,7 +3,7 @@ defmodule AppWeb.ImageController do
   alias App.Images.Image
   alias App.Images
 
-  def create(conn, %{"image" => image_params}) do
+  def create(conn, %{"image" => image} = image_params) do
     with {:ok, %Image{} = image} <- Images.create_image(image_params) do
       conn
       |> put_status(:created)
