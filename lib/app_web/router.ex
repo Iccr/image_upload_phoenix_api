@@ -11,13 +11,11 @@ defmodule AppWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    resources "images", ImageController, only: [:create, :show]
   end
 
   scope "/", AppWeb do
-    pipe_through :browser
-
-    get "/", PageController, :index
+    pipe_through :api
+    resources "/images", ImageController, only: [:create, :show]
   end
 
   # Other scopes may use custom stacks.
