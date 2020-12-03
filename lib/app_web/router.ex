@@ -11,6 +11,7 @@ defmodule AppWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    resources "images", ImageController, only: [:create, :show]
   end
 
   scope "/", AppWeb do
