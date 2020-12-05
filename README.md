@@ -1,6 +1,6 @@
 # Emample Phoenix App to upload Image via api. 
 
-refere to [`blog post`](https://sisccr.medium.com/image-upload-json-api-in-elixir-and-phoenix-637450a2d041) for more information
+refer to [`blog post`](https://sisccr.medium.com/image-upload-json-api-in-elixir-and-phoenix-637450a2d041) for more information
 
 To start your Phoenix server:
 
